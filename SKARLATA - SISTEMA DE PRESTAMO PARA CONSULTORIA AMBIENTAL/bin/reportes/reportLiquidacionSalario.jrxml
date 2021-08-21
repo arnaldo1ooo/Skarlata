@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportLector" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6df639f5-160e-416d-bedd-616a2f700ffb">
+	<property name="ireport.zoom" value="1.9487171000000054"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="144"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="NOMBRE_EMPRESA" class="java.lang.String"/>
+	<parameter name="NOMAPE_FUNCIONARIO" class="java.lang.String"/>
+	<parameter name="CI_FUNCIONARIO" class="java.lang.String"/>
+	<parameter name="CARGO_FUNCIONARIO" class="java.lang.String"/>
+	<parameter name="MES" class="java.lang.String"/>
+	<parameter name="TOTAL_HORAS_TRABAJADAS" class="java.lang.String"/>
+	<parameter name="TOTAL_HORAS_EXTRAS" class="java.lang.String"/>
+	<parameter name="TOTAL_HORAS_DESCONTADAS" class="java.lang.String"/>
+	<parameter name="SALARIO" class="java.lang.String"/>
+	<parameter name="HORAS_EXTRAS" class="java.lang.String"/>
+	<parameter name="DESCUENTOS" class="java.lang.String"/>
+	<parameter name="TOTAL_NETO" class="java.lang.String"/>
+	<parameter name="SALARIO_BASE" class="java.lang.String"/>
+	<parameter name="IPS" class="java.lang.String"/>
+	<parameter name="SUM_SALARIO_TOTAL" class="java.lang.String"/>
+	<parameter name="SUM_DESCUENTO_TOTAL" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="178" splitType="Stretch">
+			<staticText>
+				<reportElement x="149" y="29" width="280" height="20" uuid="ccea83c6-9e35-4470-bcdc-9e0bfa584c0c"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="14" isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[LIQUIDACION SALARIAL]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="455" y="2" width="100" height="20" uuid="48739bd6-08c5-4734-bb1c-57db3218e93c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="384" y="2" width="71" height="20" uuid="a351f3e3-95ae-4b2e-98fd-c67006bf3960"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha Emisión:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="69" width="121" height="20" uuid="beaae454-3f80-4855-85b7-ced6edb11578"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE Y APELLIDO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="111" width="122" height="20" uuid="59fbc4ea-8bae-4b04-8a33-a5b25323f5f2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CARGO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="121" height="20" uuid="12dc693d-656a-478d-b932-0e118ed901d9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NRO DE CÉDULA:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="53" width="555" height="1" uuid="5544b721-91c4-4406-81c6-b1c3481b82a8"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="244f2df4-e70f-46a3-a3d7-0a59b5b52475"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="2" width="124" height="20" uuid="08832861-e853-4e07-bf3c-63a906f30e07"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{NOMBRE_EMPRESA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="125" y="69" width="148" height="20" uuid="baa343e5-efeb-4b20-8ccd-29044ea47387"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{NOMAPE_FUNCIONARIO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="124" y="90" width="149" height="20" uuid="9baf5898-6a18-4054-adf2-022a0421b3e2"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{CI_FUNCIONARIO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="124" y="111" width="149" height="20" uuid="293cb9a3-3924-46ae-b63d-0a2e8660c864"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{CARGO_FUNCIONARIO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="70" y="158" width="51" height="20" uuid="c527cdb2-7dee-415a-9a3a-5a3342c3e81b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MES:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="FixRelativeToBottom" x="124" y="158" width="149" height="20" uuid="0538e435-ce64-4f46-b271-ee464bbe9c93"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{MES}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="124" y="132" width="149" height="20" uuid="df085d47-eab9-4ed9-8497-7cc921ed84f2"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{SALARIO_BASE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="132" width="122" height="20" uuid="c88bc464-8fe0-4f99-a36d-b85e815c4aaa"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALARIO BASE (208 hs):]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="203" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="2" width="555" height="1" uuid="af8bc5b8-6d8d-4e5e-829f-ee4a2ebdb57b"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="91" width="555" height="1" uuid="8043d753-2739-4ddb-a2af-efba956e014c"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="111" width="555" height="1" uuid="da27102a-4082-440a-b638-72ebbee40482"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="271" y="3" width="2" height="108" uuid="ca199a7f-d233-414a-b483-1fc060f71908"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="271" y="92" width="63" height="20" uuid="2952b83f-d578-4cdf-9733-5db0dbf9a4a3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Neto:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="200" width="555" height="1" uuid="431f0866-2a63-4c6d-b316-1b17c1d14438"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="365" y="180" width="135" height="1" uuid="7ba39fb1-cd03-4dbf-a805-dc1084fd4851"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="410" y="181" width="51" height="15" uuid="8f832a4b-d177-4263-9022-9da29688b6ba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="123" y="27" width="115" height="20" uuid="4755b85c-95ce-49fa-8cea-8aea0f83c90f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{HORAS_EXTRAS}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="386" y="7" width="115" height="20" uuid="345e3402-5ecb-4cc5-9fb8-8e635ab2f527"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{DESCUENTOS}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="339" y="92" width="100" height="19" uuid="61dc199e-e595-46c8-88e1-1777ea5b0953"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{TOTAL_NETO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="123" y="7" width="115" height="20" uuid="902bef2c-3d5d-4e62-b446-0f5966acb177"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{SALARIO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="273" y="27" width="111" height="20" uuid="13bb2094-1f8b-44aa-9408-aebd17fad9f0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IPS (9%):]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="386" y="27" width="115" height="20" uuid="1aab6f20-4142-4ac2-bf25-67643dec9bd7"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{IPS}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="7" width="121" height="20" uuid="d7db73da-f596-4f77-ac7c-8b73757c7a2c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Salario (" + ($P{TOTAL_HORAS_TRABAJADAS}) + " hs):"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="27" width="121" height="20" uuid="3d7fe152-bc5c-4f90-8ebf-11dce4385680"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Horas Extras (" + ($P{TOTAL_HORAS_EXTRAS}) + " hs):"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="273" y="7" width="111" height="20" uuid="c265ba8c-a2f2-441d-8187-16a9ae5ac72f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Horas Desc. (" + ($P{TOTAL_HORAS_DESCONTADAS}) + " hs):"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="125" y="65" width="75" height="20" uuid="eddde456-9cf4-4da7-8ccf-7422370ca2ea"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Salario Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="65" width="102" height="20" uuid="b7ea4899-fcd7-425c-bcd5-2c9b333cfa08"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descuento Total:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="202" y="65" width="69" height="20" uuid="ec5c2949-e068-4ccb-bd2c-d592d7fee343"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{SUM_SALARIO_TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="455" y="65" width="100" height="20" uuid="72b3b9c3-4e39-4c51-b482-79cc2eaadcb1"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{SUM_DESCUENTO_TOTAL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="90" splitType="Stretch"/>
+	</summary>
+</jasperReport>

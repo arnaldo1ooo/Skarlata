@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportLector" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6df639f5-160e-416d-bedd-616a2f700ffb">
+	<property name="ireport.zoom" value="1.6105100000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="NombreOrganizacion" class="java.lang.String"/>
+	<parameter name="INICIO_CODIGO" class="java.lang.String"/>
+	<parameter name="FINAL_CODIGO" class="java.lang.String"/>
+	<parameter name="INICIO_CLIENTE" class="java.lang.String"/>
+	<parameter name="FINAL_CLIENTE" class="java.lang.String"/>
+	<parameter name="INICIO_FECHACONTRATO" class="java.lang.String"/>
+	<parameter name="FINAL_FECHACONTRATO" class="java.lang.String"/>
+	<parameter name="INICIO_FECHAENTREGA" class="java.lang.String"/>
+	<parameter name="FINAL_FECHAENTREGA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="Codigo" class="java.lang.Integer"/>
+	<field name="Denominacion" class="java.lang.String"/>
+	<field name="Tipo Emprendimiento" class="java.lang.String"/>
+	<field name="Fecha Contrato" class="java.lang.String"/>
+	<field name="Fecha Entrega" class="java.lang.String"/>
+	<field name="Cliente" class="java.lang.String"/>
+	<field name="Consultor" class="java.lang.String"/>
+	<field name="Total de Costos" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="164" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="164" height="37" uuid="ea25225f-a142-4a5e-89af-a3fff7a3c1cd"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NombreOrganizacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="37" width="301" height="32" uuid="ccea83c6-9e35-4470-bcdc-9e0bfa584c0c"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="22" isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Informe de Proyectos]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="455" y="0" width="100" height="20" uuid="48739bd6-08c5-4734-bb1c-57db3218e93c"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="80" width="82" height="20" uuid="5244926e-c592-4385-a379-0dbba93ac39c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="80" width="100" height="20" uuid="757b6b7e-e4ea-4f54-b079-776b9879e471"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="100" width="46" height="20" uuid="5aecc39d-1162-48ce-a899-24a0c9952e4a"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Desde:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="120" width="46" height="20" uuid="88be3a29-ad3f-4325-8cf1-7b04f172e721"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hasta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="80" width="82" height="20" uuid="d384df38-d571-41d4-8fc1-56f8c8ee009c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Contrato:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="80" width="82" height="20" uuid="f5891e86-b308-43a3-a1c5-3cd0ce842889"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Entrega:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="100" width="82" height="20" uuid="d97ef24c-958b-4131-af3b-b4bc897bc3fc"/>
+				<textFieldExpression><![CDATA[$P{INICIO_CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="120" width="82" height="20" uuid="38c78f3a-b5b6-4b5f-a0aa-c026dc8fc6c1"/>
+				<textFieldExpression><![CDATA[$P{FINAL_CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="229" y="100" width="100" height="20" uuid="97efe872-325a-4305-8d0b-93ac688cffd4"/>
+				<textFieldExpression><![CDATA[$P{INICIO_CLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="229" y="120" width="100" height="20" uuid="0493462f-637c-45e4-9de1-16b2b0d69a88"/>
+				<textFieldExpression><![CDATA[$P{FINAL_CLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="345" y="100" width="82" height="20" uuid="8c09f672-1222-494f-b3ad-4d704e9e0a35"/>
+				<textFieldExpression><![CDATA[$P{INICIO_FECHACONTRATO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="345" y="120" width="82" height="20" uuid="2e1116a0-c3b1-412f-8b9c-3ad0d551f5c5"/>
+				<textFieldExpression><![CDATA[$P{FINAL_FECHACONTRATO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="448" y="100" width="82" height="20" uuid="07f70c59-af47-4be3-9e45-a4c7e79f006d"/>
+				<textFieldExpression><![CDATA[$P{INICIO_FECHAENTREGA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="448" y="120" width="82" height="20" uuid="d2076572-a8ab-45c0-9a67-42d69b103b23"/>
+				<textFieldExpression><![CDATA[$P{FINAL_FECHAENTREGA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="3" width="36" height="20" uuid="008c5183-acc8-445d-b064-348cc8e465ed"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="3" width="555" height="1" uuid="f9040db7-652d-42d6-80e5-e67763240cd9"/>
+			</line>
+			<line>
+				<reportElement x="0" y="24" width="555" height="1" uuid="818d04ac-64b5-4a4d-b010-5beb60b5bdd9"/>
+			</line>
+			<staticText>
+				<reportElement x="40" y="3" width="111" height="20" uuid="8fcf9490-731f-4e6d-83e6-b7b8acf6bfc3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Denominacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="3" width="117" height="20" uuid="d28cf7b4-81b1-4355-afc8-9b25a4d85e59"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo Emprendimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="3" width="75" height="20" uuid="0012ac16-ef8e-4fb2-8de3-2390f73664a0"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Contrato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="3" width="78" height="20" uuid="4b4739d3-27e6-4c34-8104-1dd735c15cb1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Entrega]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="3" width="104" height="20" uuid="d628d078-8a51-4a1d-840b-ac2ed34738ae"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de Costos]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="10" y="1" width="26" height="20" uuid="5cf201f0-ba05-4afa-8500-5de30651c717"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Codigo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="40" y="1" width="111" height="20" uuid="b7bd08f7-d3aa-4940-b701-54a1e9c0f67b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Denominacion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="162" y="1" width="117" height="20" uuid="44903a7b-96e3-4fc5-9a59-78a7543a3130"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tipo Emprendimiento}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="286" y="1" width="75" height="20" uuid="dd746440-c11a-47eb-bfcc-f3f290db2b21"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fecha Contrato}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="367" y="1" width="78" height="20" uuid="4ca5ab68-5775-4348-96ed-bfc3aa82e396"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fecha Entrega}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="451" y="1" width="104" height="20" uuid="9b39015a-de0c-4697-9631-4bf219c5bce3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Total de Costos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="429" y="0" width="126" height="20" uuid="f64f953e-2df1-4d01-b50b-62ae4bd51a9d"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="90" splitType="Stretch">
+			<textField>
+				<reportElement x="429" y="50" width="17" height="20" uuid="26ce8595-a87d-4a40-826d-1d7747017637"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="455" y="50" width="100" height="20" uuid="c031c140-a224-41a6-89ff-655c10aaa2da"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[REGISTROS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="100" height="20" uuid="164161e9-3503-4eab-ab4e-ce39ecfefa4e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[FIN ARCHIVO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="70" width="100" height="20" uuid="38dc27d6-b1b4-4871-8d27-48146afd8e9f"/>
+				<text><![CDATA[(reportProyecto)]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
